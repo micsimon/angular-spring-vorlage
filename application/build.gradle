@@ -1,0 +1,18 @@
+apply plugin: 'java'
+
+ext{
+    springBootVersion = '1.4.3.RELEASE'
+    guavaVersion = '20.0'
+    testNgVersion = '6.9.10'
+}
+
+dependencies {
+    compile "com.google.guava:guava:${guavaVersion}"
+    compile "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
+    compile "org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}"
+
+    testCompile "org.testng:testng:${testNgVersion}"
+
+    compile project(':backend')
+    compile project(':frontend')
+}

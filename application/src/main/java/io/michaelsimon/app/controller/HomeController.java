@@ -1,4 +1,4 @@
-package io.michaelsimon.app.controller;
+package io.michaelsimon.app.backend.service;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
