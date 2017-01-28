@@ -4,4 +4,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class DummyService {
+
+    public String sayHello() {
+        return "hat geklappt !!!111einseinseins";
+    }
 }

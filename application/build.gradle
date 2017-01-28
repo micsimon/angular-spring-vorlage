@@ -1,9 +1,10 @@
 apply plugin: 'java'
+apply plugin: "org.springframework.boot"
 
-ext{
-    springBootVersion = '1.4.3.RELEASE'
-    guavaVersion = '20.0'
-    testNgVersion = '6.9.10'
+buildscript {
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+    }
 }
 
 dependencies {

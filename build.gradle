@@ -1,5 +1,11 @@
 subprojects {
 
+    ext{
+        springBootVersion = '1.4.3.RELEASE'
+        guavaVersion = '20.0'
+        testNgVersion = '6.9.10'
+    }
+
     buildscript {
         repositories {
             jcenter()
