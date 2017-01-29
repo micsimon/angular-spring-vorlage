@@ -4,6 +4,7 @@ subprojects {
         springBootVersion = '1.4.3.RELEASE'
         guavaVersion = '20.0'
         testNgVersion = '6.9.10'
+        mockitoVersion = '2.6.9'
     }
 
     buildscript {

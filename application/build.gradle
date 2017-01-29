@@ -13,6 +13,8 @@ dependencies {
     compile "org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}"
 
     testCompile "org.testng:testng:${testNgVersion}"
+    testCompile "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
+    testCompile "org.mockito:mockito-core:${mockitoVersion}"
 
     compile project(':backend')
     compile project(':frontend')
