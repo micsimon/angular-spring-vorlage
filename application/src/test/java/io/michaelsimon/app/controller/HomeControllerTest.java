@@ -1,24 +1,45 @@
 package io.michaelsimon.app.controller;
 
-
-import io.michaelsimon.app.AbstractMvcTest;
-import org.springframework.test.web.servlet.MvcResult;
+import io.michaelsimon.app.backend.service.DummyService;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static org.springframework.http.MediaType.TEXT_HTML_VALUE;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.mockito.Mockito.when;
+import static org.mockito.MockitoAnnotations.initMocks;
 import static org.testng.Assert.assertEquals;
 
 @Test
-public class HomeControllerTest extends AbstractMvcTest {
+public class HomeControllerTest {
 
-    public void home() throws Exception {
-        MvcResult result = this.mockMvc.perform(get("/home").accept(TEXT_HTML_VALUE))
-                .andExpect(status().isOk())
-                .andReturn();
+    @InjectMocks
+    private HomeController underTest;
 
-        assertEquals(result.getResponse().getContentAsString(), "hat geklappt !!!111einseinseins");
+    @Mock
+    private DummyService dummyService;
+
+    private String expect;
+    private String actual;
+
+    @BeforeMethod
+    public void setup() {
+        underTest = new HomeController();
+        initMocks(this);
+
+        expect = "expected string";
+        when(dummyService.sayHello()).thenReturn(expect);
+    }
+
+    public void index_ok() {
+        execute();
+
+        assertEquals(actual, expect, String.format("'%s' must be '%s'", actual, expect));
+
+    }
+
+    private void execute() {
+        this.actual = underTest.index();
     }
 
 }
