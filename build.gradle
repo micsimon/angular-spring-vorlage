@@ -16,4 +16,14 @@ subprojects {
     repositories {
         jcenter()
     }
+
+    apply plugin: 'java'
+
+    test{
+        useTestNG()
+        testLogging {
+            // Show that tests are run in the command-line output
+            events 'started', 'passed'
+        }
+    }
 }
