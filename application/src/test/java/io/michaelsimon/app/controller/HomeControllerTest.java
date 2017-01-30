@@ -6,6 +6,7 @@ import org.mockito.Mock;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import static java.lang.String.format;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 import static org.testng.Assert.assertEquals;
@@ -34,7 +35,7 @@ public class HomeControllerTest {
     public void index_ok() {
         execute();
 
-        assertEquals(actual, expect, String.format("'%s' must be '%s'", actual, expect));
+        assertEquals(actual, expect, format("'%s' must be '%s'", actual, expect));
 
     }
 
