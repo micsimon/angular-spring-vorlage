@@ -1,2 +1,2 @@
 rootProject.name = 'angular-spring-vorlage'
-include 'frontend', 'backend', 'application'
+include 'frontend', 'backend'

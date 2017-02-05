@@ -1,6 +1,6 @@
 package io.michaelsimon.app.controller;
 
-import io.michaelsimon.app.backend.service.DummyService;
+import io.michaelsimon.app.service.DummyService;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.testng.annotations.BeforeMethod;
