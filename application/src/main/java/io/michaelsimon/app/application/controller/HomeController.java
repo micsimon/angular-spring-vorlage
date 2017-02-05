@@ -1,4 +1,4 @@
-package io.michaelsimon.app.controller;
+package io.michaelsimon.app.application.controller;
 
 import io.michaelsimon.app.backend.service.DummyService;
 import org.springframework.beans.factory.annotation.Autowired;
