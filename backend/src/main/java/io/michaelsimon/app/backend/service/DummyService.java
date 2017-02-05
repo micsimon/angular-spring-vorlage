@@ -1,4 +1,4 @@
-package io.michaelsimon.app.service;
+package io.michaelsimon.app.backend.service;
 
 import org.springframework.stereotype.Service;
 
