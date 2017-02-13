@@ -1,3 +1,7 @@
 <p>
   search works!
 </p>
+<ng2-completer pause="0" autoMatch="false" [(ngModel)]="searchString" #openCloseExample [dataService]="dataService"
+               [minSearchLength]="0"></ng2-completer>
+
+<button (click)="onOpen()">Suchen</button>

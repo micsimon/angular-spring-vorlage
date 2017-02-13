@@ -5,6 +5,7 @@ import {HttpModule} from "@angular/http";
 import {AppComponent} from "./component/_app/app.component";
 import {SearchComponent} from "./component/search/search.component";
 import {RoutingModule} from "./app-routing.module";
+import {Ng2CompleterModule} from "ng2-completer";
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {RoutingModule} from "./app-routing.module";
     BrowserModule,
     FormsModule,
     HttpModule,
-    RoutingModule
+    RoutingModule,
+    Ng2CompleterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
