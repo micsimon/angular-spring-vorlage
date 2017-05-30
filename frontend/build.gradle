@@ -1,6 +1,25 @@
 apply plugin: 'java'
+apply plugin: "com.moowork.node"
 
-dependencies {
-    compile 'com.google.guava:guava:20.0'
-    testCompile 'junit:junit:4.12'
+buildscript {
+  dependencies {
+    classpath "com.moowork.gradle:gradle-node-plugin:1.1.1"
+  }
 }
+
+node {
+  version = '7.9.0'
+  download = true
+}
+
+task buildFrontend(type: NpmTask, dependsOn: 'npmInstall') {
+  args = ['run', 'build']
+}
+
+task testFrontend(type: NpmTask, dependsOn: 'npmInstall') {
+  println "###asd###"
+  args = ['run', 'test']
+}
+
+test.mustRunAfter testFrontend
+jar.mustRunAfter buildFrontend

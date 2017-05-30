@@ -10,6 +10,10 @@ subprojects {
     buildscript {
         repositories {
             jcenter()
+
+            maven {
+                url "https://plugins.gradle.org/m2/"
+            }
         }
     }
 
@@ -17,17 +21,22 @@ subprojects {
         jcenter()
     }
 
-    apply plugin: 'java'
+}
 
-    test{
-        useTestNG()
-        testLogging {
-            // Show that tests are run in the command-line output
-            events 'started', 'passed'
-        }
+apply plugin: 'java'
+
+task release(){
+    group 'release'
+    doLast {
+    println '####RELEASE######'
     }
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '3.3'
+    gradleVersion = '3.5'
 }
+
+tasks.findByPath('application:test').mustRunAfter tasks.findByPath('frontend:test')
+
+test.mustRunAfter subprojects.test
+release.mustRunAfter test
