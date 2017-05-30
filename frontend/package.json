@@ -5,9 +5,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build:dev": "ng build",
+    "build:dev": "ng build -w",
     "build:dev:aot": "ng build --watch=false -aot",
-    "build:prod": "ng build --prod --no-aot",
+    "build:prod": "ng build --prod -w --no-aot",
     "build:prod:aot": "ng build --prod",
     "test": "ng test --watch=false",
     "test:watch": "ng test",
