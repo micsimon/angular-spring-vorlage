@@ -1,5 +1,6 @@
 pipeline {
     agent any
+    checkout scm
 
     stages {
         stage('Build') {
@@ -9,11 +10,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                if (isUnix()) {
                         sh './gradlew clean build'
-                    } else {
-                        bat './gradlew.bat clean build'
-                    }
             }
         }
         stage('Deploy') {
