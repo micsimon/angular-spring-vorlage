@@ -1,22 +1,12 @@
-pipeline {
-    agent any
+node {
+    stage 'checkout'
     checkout scm
 
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Building..'
-            }
-        }
-        stage('Test') {
-            steps {
-                        sh './gradlew clean build'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
+    stage 'test'
+    if (isUnix()) {
+        sh './gradlew test'
+    } else {
+        bat './gradlew.bat test'
     }
+
 }
