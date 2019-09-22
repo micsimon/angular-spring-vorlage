@@ -13,7 +13,9 @@ export class AppComponent {
   }
 
   public setNewTitle(): void {
-    this.httpClient.get('/api/home/titel').subscribe((value: string) => this.title = value);
+    this.httpClient.get('/api/home').subscribe((response: HomeResponse) => {
+      this.title = response.content
+    });
   }
 
 }

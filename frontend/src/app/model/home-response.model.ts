@@ -1,0 +1,3 @@
+interface HomeResponse {
+  content: string
+}

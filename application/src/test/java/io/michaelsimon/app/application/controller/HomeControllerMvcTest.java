@@ -6,7 +6,6 @@ import org.junit.Test;
 import org.springframework.test.web.servlet.MvcResult;
 
 import static org.junit.Assert.assertEquals;
-import static org.springframework.http.MediaType.TEXT_HTML_VALUE;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -14,12 +13,14 @@ public class HomeControllerMvcTest extends AbstractMvcTest {
 
     @Test
     public void home() throws Exception {
-        MvcResult result = this.mockMvc.perform(get("/home").accept(TEXT_HTML_VALUE))
+        MvcResult result = this.mockMvc.perform(get("/api/home"))
                                        .andExpect(status().isOk())
                                        .andReturn();
 
-        assertEquals("hello ... welcome", result.getResponse()
-                                                .getContentAsString());
+        String actual = result.getResponse()
+                              .getContentAsString();
+
+        assertEquals("{\"content\":\"hello ... welcome\"}", actual);
     }
 
 }

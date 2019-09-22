@@ -1,6 +1,8 @@
 package io.michaelsimon.app.application.controller;
 
 import io.michaelsimon.app.AbstractMvcTest;
+import io.michaelsimon.app.application.controller.home.HomeController;
+import io.michaelsimon.app.application.controller.model.HomeResponse;
 import io.michaelsimon.app.backend.service.DummyService;
 import org.junit.Before;
 import org.junit.Test;
@@ -20,7 +22,7 @@ public class HomeControllerTest extends AbstractMvcTest {
     private DummyService dummyService;
 
     private String expect;
-    private String actual;
+    private HomeResponse actual;
 
     @Before
     public void setup() {
@@ -32,15 +34,15 @@ public class HomeControllerTest extends AbstractMvcTest {
     }
 
     @Test
-    public void index_ok() {
+    public void home_ok() {
         execute();
 
-        assertEquals(actual, expect);
+        assertEquals(actual.getContent(), expect);
 
     }
 
     private void execute() {
-        this.actual = underTest.index();
+        this.actual = underTest.home();
     }
 
 }
