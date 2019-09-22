@@ -1,17 +1,17 @@
 package io.michaelsimon.app.application.controller;
 
+import io.michaelsimon.app.AbstractMvcTest;
 import io.michaelsimon.app.backend.service.DummyService;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 
-import static java.lang.String.format;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
-public class HomeControllerTest {
+public class HomeControllerTest extends AbstractMvcTest {
 
     @InjectMocks
     private HomeController underTest;
@@ -35,7 +35,7 @@ public class HomeControllerTest {
     public void index_ok() {
         execute();
 
-        assertEquals(actual, expect, format("'%s' must be '%s'", actual, expect));
+        assertEquals(actual, expect);
 
     }
 

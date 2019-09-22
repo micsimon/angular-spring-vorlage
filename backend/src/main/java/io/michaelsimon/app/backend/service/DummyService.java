@@ -6,6 +6,6 @@ import org.springframework.stereotype.Service;
 public class DummyService {
 
     public String sayHello() {
-        return "hat geklappt !!!111einseinseins";
+        return "hello ... welcome";
     }
 }

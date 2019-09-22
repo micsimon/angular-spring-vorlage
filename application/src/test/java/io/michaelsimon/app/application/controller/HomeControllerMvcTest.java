@@ -18,7 +18,8 @@ public class HomeControllerMvcTest extends AbstractMvcTest {
                                        .andExpect(status().isOk())
                                        .andReturn();
 
-        assertEquals(result.getResponse().getContentAsString(), "hat geklappt !!!111einseinseins");
+        assertEquals("hello ... welcome", result.getResponse()
+                                                .getContentAsString());
     }
 
 }
