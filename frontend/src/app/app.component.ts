@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
   title = 'frontend';
+
+  constructor(private httpClient: HttpClient) {
+  }
+
+  public setNewTitle(): void {
+    this.httpClient.get('/api/home/titel').subscribe((value: string) => this.title = value);
+  }
+
 }

@@ -10,7 +10,7 @@ import static org.springframework.http.MediaType.TEXT_HTML_VALUE;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
 @Controller
-public class HomeController {
+public class HomeController extends AbstractController {
 
     @Autowired
     private DummyService dummyService;
