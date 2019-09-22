@@ -1,9 +1,7 @@
-apply plugin: 'java'
-
 dependencies {
-    compile "com.google.guava:guava:${guavaVersion}"
     compile "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
     compile "org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}"
+    compile "org.springframework.boot:spring-boot-devtools:${springBootVersion}"
 
-    testCompile "org.testng:testng:${testNgVersion}"
+    testCompile "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
 }

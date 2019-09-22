@@ -1,12 +1,16 @@
+# Gradle
+.gradle
+build/
+
+# Java
 *.class
 /target
 
 # IDEA
 *.iml
-/.idea
+.idea
 
 # Node
-/node
 /node_modules
 
 # common

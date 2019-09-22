@@ -1,21 +1,12 @@
 apply plugin: 'java'
-apply plugin: "org.springframework.boot"
-
-buildscript {
-    dependencies {
-        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
-    }
-}
+apply plugin: 'org.springframework.boot'
 
 dependencies {
-    compile "com.google.guava:guava:${guavaVersion}"
     compile "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
     compile "org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}"
     compile "org.springframework.boot:spring-boot-devtools:${springBootVersion}"
 
-    testCompile "org.testng:testng:${testNgVersion}"
     testCompile "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
-    testCompile "org.mockito:mockito-core:${mockitoVersion}"
 
     compile project(':backend')
     compile project(':frontend')

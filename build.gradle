@@ -1,11 +1,20 @@
-subprojects {
+plugins {
+    id 'java'
+    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+    id "org.springframework.boot" version "2.1.8.RELEASE"
+}
 
-    ext{
-        springBootVersion = '1.4.3.RELEASE'
-        guavaVersion = '20.0'
-        testNgVersion = '6.9.10'
-        mockitoVersion = '2.6.9'
-    }
+repositories {
+    mavenCentral()
+}
+
+project.ext {
+    groupId = 'io.michaelsimon'
+    artifactId = 'application'
+    version = new Date().format('yyyy.MM.dd-HH.mm.ss')
+}
+
+subprojects {
 
     buildscript {
         repositories {
@@ -21,22 +30,15 @@ subprojects {
         jcenter()
     }
 
-}
-
-apply plugin: 'java'
-
-task release(){
-    group 'release'
-    doLast {
-    println '####RELEASE######'
+    configure(allprojects) {
+        apply from: '../gradle/scripts/java.gradle'
+        apply from: '../gradle/scripts/dependencyVersion.gradle'
+        apply from: '../gradle/scripts/dependencyManagement.gradle'
     }
-}
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '3.5'
+
 }
 
 tasks.findByPath('application:test').mustRunAfter tasks.findByPath('frontend:test')
 
 test.mustRunAfter subprojects.test
-release.mustRunAfter test

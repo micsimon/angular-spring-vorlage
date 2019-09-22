@@ -1,2 +1,2 @@
-rootProject.name = 'angular-spring-vorlage'
+rootProject.name = 'angular-spring-seed'
 include 'frontend', 'backend', 'application'

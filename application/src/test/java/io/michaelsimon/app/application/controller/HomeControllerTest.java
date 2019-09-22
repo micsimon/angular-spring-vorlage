@@ -1,17 +1,16 @@
 package io.michaelsimon.app.application.controller;
 
 import io.michaelsimon.app.backend.service.DummyService;
+import org.junit.Before;
+import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
 
 import static java.lang.String.format;
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
-import static org.testng.Assert.assertEquals;
 
-@Test
 public class HomeControllerTest {
 
     @InjectMocks
@@ -23,7 +22,7 @@ public class HomeControllerTest {
     private String expect;
     private String actual;
 
-    @BeforeMethod
+    @Before
     public void setup() {
         underTest = new HomeController();
         initMocks(this);
@@ -32,6 +31,7 @@ public class HomeControllerTest {
         when(dummyService.sayHello()).thenReturn(expect);
     }
 
+    @Test
     public void index_ok() {
         execute();
 
