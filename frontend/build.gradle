@@ -1,3 +1,4 @@
+apply plugin: 'java'
 apply plugin: 'com.moowork.node'
 
 buildscript {
@@ -13,11 +14,21 @@ node {
 
 task buildFrontend(type: NpmTask, dependsOn: 'npmInstall') {
   args = ['run', 'build']
+
+  doLast {
+    println '###asd'
+  }
 }
 
 task testFrontend(type: NpmTask, dependsOn: 'npmInstall') {
   args = ['run', 'test']
 }
 
+jar {
+  from('dist/frontend') {
+    into 'static/app'
+  }
+}
+
 test.mustRunAfter testFrontend
-jar.mustRunAfter buildFrontend
+jar.dependsOn buildFrontend

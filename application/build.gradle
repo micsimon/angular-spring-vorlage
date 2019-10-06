@@ -9,5 +9,10 @@ dependencies {
     compile project(':frontend')
 
     testCompile "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
-
 }
+
+bootJar{
+    mainClassName = 'io.michaelsimon.app.application.Main'
+}
+
+

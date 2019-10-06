@@ -1,7 +1,7 @@
 plugins {
     id 'java'
     id 'io.spring.dependency-management' version '1.0.8.RELEASE'
-    id "org.springframework.boot" version "2.1.8.RELEASE"
+    id 'org.springframework.boot' version '2.1.8.RELEASE'
 }
 
 repositories {
@@ -35,7 +35,18 @@ subprojects {
         apply from: '../gradle/scripts/dependencyVersion.gradle'
         apply from: '../gradle/scripts/dependencyManagement.gradle'
     }
+}
 
+task release(dependsOn: subprojects.build){
+    group 'project'
+
+    doFirst {
+
+    }
+
+    doLast{
+        println "release of version '${project.ext['version']}' successful"
+    }
 
 }
 
