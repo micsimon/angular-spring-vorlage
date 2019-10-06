@@ -1,4 +1,4 @@
-package io.michaelsimon.app.application.controller.model;
+package io.michaelsimon.app.application.model;
 
 public class HomeResponse {
 

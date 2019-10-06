@@ -1,7 +1,7 @@
 package io.michaelsimon.app.application.controller.home;
 
 import io.michaelsimon.app.application.controller.AbstractController;
-import io.michaelsimon.app.application.controller.model.HomeResponse;
+import io.michaelsimon.app.application.model.HomeResponse;
 import io.michaelsimon.app.backend.service.DummyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;

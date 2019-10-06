@@ -2,7 +2,7 @@ package io.michaelsimon.app.application.controller;
 
 import io.michaelsimon.app.AbstractMvcTest;
 import io.michaelsimon.app.application.controller.home.HomeController;
-import io.michaelsimon.app.application.controller.model.HomeResponse;
+import io.michaelsimon.app.application.model.HomeResponse;
 import io.michaelsimon.app.backend.service.DummyService;
 import org.junit.Before;
 import org.junit.Test;
