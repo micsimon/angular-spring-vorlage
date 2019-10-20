@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {HomeResponse} from "./model/home-response.model";
 
 @Component({
   selector: 'app-root',

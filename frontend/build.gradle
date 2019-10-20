@@ -23,5 +23,6 @@ jar {
   }
 }
 
-test.mustRunAfter testFrontend
-jar.dependsOn buildFrontend
+test.dependsOn testFrontend
+jar.mustRunAfter buildFrontend
+build.dependsOn buildFrontend

@@ -1,3 +1,3 @@
-interface HomeResponse {
+export interface HomeResponse {
   content: string
 }

@@ -17,7 +17,7 @@ public class HomeController extends AbstractController {
     @Autowired
     private DummyService dummyService;
 
-    @RequestMapping(method = GET, path = "/home", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @RequestMapping(method = GET, path = "/home", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public HomeResponse home() {
         return new HomeResponse(dummyService.sayHello());

@@ -1,7 +1,7 @@
 plugins {
     id 'java'
     id 'io.spring.dependency-management' version '1.0.8.RELEASE'
-    id 'org.springframework.boot' version '2.1.8.RELEASE'
+    id 'org.springframework.boot' version '2.2.0.RELEASE'
 }
 
 repositories {
@@ -49,4 +49,4 @@ task buildApplication(dependsOn: subprojects.build){
 
 tasks.findByPath('application:test').mustRunAfter tasks.findByPath('frontend:test')
 
-test.mustRunAfter subprojects.test
+test.dependsOn subprojects.test
