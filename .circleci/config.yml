@@ -1,1 +1,1 @@
-version: 2.1jobs:  build:    docker:      - image: circleci/openjdk:11.0.4-stretch-browsers    steps:      - checkout # check out the code in the project directory      - run:          name: "Tests"          command: "./gradlew clean test"
+version: 2.1jobs:  build:    docker:      - image: circleci/openjdk:11.0.4-stretch-browsers    steps:      - checkout      - run:          name: "Tests"          command: "./gradlew clean test"
