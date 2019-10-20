@@ -1,4 +1,4 @@
 ext {
     springBootVersion = '2.1.8.RELEASE'
-    swaggerVersion = '2.7.0'
+    swaggerVersion = '2.9.2'
 }
