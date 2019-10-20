@@ -11,7 +11,7 @@ dependencies {
     testCompile "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
 }
 
-bootJar{
+bootJar {
     mainClassName = 'io.michaelsimon.app.application.Main'
 }
 
